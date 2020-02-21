@@ -66,8 +66,7 @@ class Automator:
             except AttributeError as ex:
                 err.error_abort(f"ERROR: Failed attempting to extract class '{self.tool_name}' from module.\n{ex}")
 
-            tool_object = tool_class(f"{self.FILE_NAME} -tool {self.tool_name} {' '.join(self.arg_list)}",
-                                     self.arg_list)
+            tool_object = tool_class(self.arg_list)
             tool_object.run()
         else:
             err.error_abort(f"ERROR: '{self.tool_name}' invalid tool", True)

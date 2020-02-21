@@ -9,6 +9,8 @@ def tdd(actual, expected, test_name):
         result = True
 
     print(f"[{state}] {test_name}")
+    if result is False:
+        print(f"Expected: {expected}, Received: {actual}")
     return result
 
 
